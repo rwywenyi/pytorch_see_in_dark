@@ -1,0 +1,6 @@
+name: pt2.0
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+prefix: /usr/local/miniconda3/envs/pt2.0
