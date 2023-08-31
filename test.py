@@ -68,6 +68,31 @@ def extract_short(txt_path, short_folder):
     print("文件已复制到目标文件夹。")
 
 
+import logging
+
+# 配置日志输出格式
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# 创建文件处理器
+file_handler = logging.FileHandler('training.log')
+
+# 配置文件处理器的日志输出格式
+file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+
+# 添加文件处理器到日志记录器
+logging.getLogger().addHandler(file_handler)
+
+# 模拟深度学习训练过程
+def train():
+    logging.info("开始训练...")
+    for epoch in range(10):
+        logging.info(f"Epoch {epoch + 1}/{10} - 正在训练...")
+        # 模拟训练过程
+        loss = 0.1 * (epoch + 1)
+        logging.info(f"Epoch {epoch + 1}/{10} - 损失: {loss:.4f}")
+    logging.info("训练完成")
+
+
 if __name__ == '__main__':
     input_dir = 'D:/Sony/Sony/short/'
     gt_dir = 'D:/Sony/Sony/long/'
